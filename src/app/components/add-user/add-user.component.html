@@ -1,1 +1,32 @@
 <p>add-user works!</p>
+<div>
+    <div *ngIf="!submitted">
+      <div >
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          required
+          [(ngModel)]="user.name"
+          name="name"
+        />
+      </div>
+  
+      <div >
+        <label for="email">Email</label>
+        <input
+        
+          id="email"
+          required
+          [(ngModel)]="user.email"
+          name="email"
+        />
+      </div>
+  
+      <button (click)="saveUser()">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>User was submitted successfully!</h4>
+      <button (click)="newUser()">Add</button>
+    </div>
+</div>
