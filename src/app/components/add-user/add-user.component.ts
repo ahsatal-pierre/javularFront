@@ -19,8 +19,8 @@ export class AddUserComponent {
 
   saveUser(): void {
     const data = {
-      title: this.user.name,
-      description: this.user.email
+      name: this.user.name,
+      email: this.user.email
     };
 
     this.UserService.create(data)
