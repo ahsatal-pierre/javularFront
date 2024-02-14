@@ -1,1 +1,60 @@
 <p>user-details works!</p>
+<div *ngIf="viewMode">
+    <div *ngIf="currentUser.id; else noUser">
+      <h4>User</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentUser.name }}
+      </div>
+      <div>
+        <label><strong>Email:</strong></label>
+        {{ currentUser.Email }}
+      </div>
+      <a routerLink="/users/{{ currentUser.id }}">
+        Edit
+      </a>
+    </div>
+    <ng-template #noUser>
+      <p>Please click on an User</p>
+    </ng-template>
+  </div>
+  <div *ngIf="!viewMode">
+    <div *ngIf="currentUser.id; else cannotAccess">
+      <div>
+        <h4>User</h4>
+        <form>
+          <div>
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              [(ngModel)]="currentUser.name"
+              name="name"
+            />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              [(ngModel)]="currentUser.email"
+              name="email"
+            />
+          </div>
+        </form>
+        
+        <button (click)="deleteUser()">
+          Delete
+        </button>
+        <button
+          type="submit"
+          (click)="updateUser()">
+          Update
+        </button>
+        <p>{{ message }}</p>
+      </div>
+    </div>
+    <ng-template #cannotAccess>
+      <p>Cannot access this User</p>
+    </ng-template>
+  </div>
+  
