@@ -1,1 +1,42 @@
 <p>users-list works!</p>
+<div>
+    <div>
+      <div>
+        <input
+          type="text"
+          placeholder="Search by name"
+          [(ngModel)]="name"
+        />
+        <div>
+          <button
+           
+            type="button"
+            (click)="searchName()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div >
+      <h4>Users List</h4>
+      <ul>
+        <li *ngFor="let user of users; let i = index"
+            [class.active]="i === currentIndex"
+            (click)="setActiveUser(user, i)">
+            {{ user.name }}
+        </li>
+    </ul>
+  
+      <button  (click)="removeAllUsers()">
+        Remove All
+      </button>
+    </div>
+
+    <div >
+      <app-user-details
+        [viewMode]="true"
+        [currentUser]="currentUser"
+      ></app-user-details>
+    </div>
+  </div>
