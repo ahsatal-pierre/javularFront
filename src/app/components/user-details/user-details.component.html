@@ -9,7 +9,7 @@
         <label><strong>Email:</strong></label>
         {{ currentUser.email }}
       </div>
-      <a routerLink="/users/{{ currentUser.id }}">
+      <a routerLink="/users/{{ currentUser.id }}" class="button is-link " >
         Edit
       </a>
     </div>
@@ -24,7 +24,7 @@
         <form>
           <div>
             <label for="name">Name</label>
-            <inputœ
+            <input
               type="text"
               id="name"
               [(ngModel)]="currentUser.name"
@@ -42,10 +42,11 @@
           </div>
         </form>
         
-        <button (click)="deleteUser()">
+        <button class="button is-danger" (click)="deleteUser()">
           Delete
         </button>
         <button
+        class="button is-warning"
           type="submit"
           (click)="updateUser()">
           Update
