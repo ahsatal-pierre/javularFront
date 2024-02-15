@@ -14,16 +14,13 @@
   
     <div id="navbarItems" class="navbar-menu"  [class.is-active]="showBurgerMenu">
       <div class="navbar-start">
-        <a class="navbar-item" routerLink="users">
+        <a class="navbar-item" routerLink="users" (click)="closeMenu()">
             Users
         </a>
   
-        <a class="navbar-item" routerLink="add">
+        <a class="navbar-item" routerLink="add" (click)="closeMenu()">
             Add
         </a>
-      </div>
-      <div>
-        <!-- <router-outlet></router-outlet> -->
       </div>
     </div>
   </nav>
