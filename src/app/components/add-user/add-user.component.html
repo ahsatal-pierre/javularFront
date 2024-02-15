@@ -1,5 +1,5 @@
 <p>add-user works!</p>
-<div>
+<div class="container is-fluid">
     <div *ngIf="!submitted">
       <div >
         <label for="name">Name</label>
@@ -23,10 +23,10 @@
         />
       </div>
   
-      <button class="button" (click)="saveUser()">Submit</button>
+      <button (click)="saveUser()">Submit</button>
     </div>
     <div *ngIf="submitted">
       <h4>User was submitted successfully!</h4>
-      <button class="button" (click)="newUser()">Add</button>
+      <button (click)="newUser()">Add</button>
     </div>
 </div>
