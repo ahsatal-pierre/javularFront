@@ -56,7 +56,6 @@ export class UsersListComponent {
   searchName(): void {
     this.currentUser = {};
     this.currentIndex = -1;
-
     this.userService.findByName(this.name)
       .subscribe({
         next: (data) => {
