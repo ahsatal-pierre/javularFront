@@ -1,9 +1,10 @@
 <p>add-user works!</p>
-<div class="container is-fluid">
+  <form class="box ">
     <div *ngIf="!submitted">
-      <div >
-        <label for="name">Name</label>
+      <div class="field"> 
+        <label class="label" for="name">Name</label>
         <input
+        class="input"   
           type="text"
           id="name"
           required
@@ -12,21 +13,23 @@
         />
       </div>
   
-      <div >
-        <label for="email">Email</label>
+      <div class="field">
+        <label class="label" for="email">Email</label>
         <input
-        
+        class="input" 
+        type="email"
           id="email"
           required
           [(ngModel)]="user.email"
           name="email"
+          placeholder="e.g. alex@example.com"
         />
       </div>
   
-      <button (click)="saveUser()">Submit</button>
+      <button class="button is-primary" (click)="saveUser()">Submit</button>
     </div>
     <div *ngIf="submitted">
       <h4>User was submitted successfully!</h4>
-      <button (click)="newUser()">Add</button>
+      <button class="button is-primary" (click)="newUser()">Add</button>
     </div>
-</div>
+  </form>

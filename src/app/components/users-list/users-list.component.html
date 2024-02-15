@@ -1,5 +1,5 @@
-<div class="container is-fluid">
-    <div>
+  <div class="block">
+    <div class="block">
       <div>
         <input
           type="text"
@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div >
+    <div  >
       <h4>Users List</h4>
       <ul>
         <li *ngFor="let user of users; let i = index"
@@ -32,7 +32,7 @@
       </button>
     </div>
 
-    <div >
+    <div class="block">
       <app-user-details
         [viewMode]="true"
         [currentUser]="currentUser"

@@ -1,4 +1,5 @@
-<div *ngIf="viewMode" class="container is-fluid">
+<div class="box">
+  <div  *ngIf="viewMode" >
     <div *ngIf="currentUser.id; else noUser">
       <h4>User</h4>
       <div>
@@ -14,7 +15,7 @@
     </div>
     <ng-template #noUser>
       <p>Please click on an User</p>
-    </ng-template>
+    </ng-template>  
   </div>
   <div *ngIf="!viewMode">
     <div *ngIf="currentUser.id; else cannotAccess">
@@ -56,5 +57,6 @@
     <ng-template #cannotAccess>
       <p>Cannot access this User</p>
     </ng-template>
+  </div>
   </div>
   
