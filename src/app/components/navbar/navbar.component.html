@@ -1,0 +1,29 @@
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <a  href="#">Javular</a>
+    </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarItems"  [class.is-active]="showBurgerMenu"
+      (click)="showBurgerMenu = !showBurgerMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarItems" class="navbar-menu"  [class.is-active]="showBurgerMenu">
+      <div class="navbar-start">
+        <a class="navbar-item" routerLink="users">
+            Users
+        </a>
+  
+        <a class="navbar-item" routerLink="add">
+            Add
+        </a>
+      </div>
+      <div>
+        <!-- <router-outlet></router-outlet> -->
+      </div>
+    </div>
+  </nav>
